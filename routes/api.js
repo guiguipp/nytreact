@@ -15,7 +15,6 @@ const db = require("../models/");
  */
 console.log("Getting the routes")
 
-// get list of articles from the db
 app.get("/articles", function(req,res) {
     db.Article.find({})
     .then(function(dbArticle){
@@ -41,4 +40,4 @@ app.delete("/articles/:id", function(req,res) {
     res.send({type:"DELETE"})
 })  
 
-module.exports = app;
+module.exports = app

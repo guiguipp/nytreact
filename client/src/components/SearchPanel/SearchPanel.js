@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import "./SearchPanel.css"
 
 const SearchPanel = props => (
     <div className="row">
-        <div className="col-sm-12">
+        <div className="col-sm-1"></div>
+        <div className="col-sm-10">
         <br />
             <div className="panel panel-primary">
                 <div className="panel-heading">
@@ -13,7 +14,7 @@ const SearchPanel = props => (
                     </h3>
                 </div>
                 <div className="panel-body">
-                    <form role="form">
+                    <form>
 
                         <div className="form-group">
                             <label htmlFor="search">Search Term:</label>
@@ -24,7 +25,7 @@ const SearchPanel = props => (
                             <label htmlFor="pwd">Number of Records to Retrieve:</label>
                             <select className="form-control" id="article-count">
                                 <option value="1">1</option>
-                                <option value="5" selected>5</option>
+                                <option value="5">5</option>
                                 <option value="10">10</option>
                             </select>
                         </div>
