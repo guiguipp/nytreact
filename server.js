@@ -15,7 +15,18 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nyreact-app');
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/nyreact-app'
+// mongoose.connect(uri, {userNewUrlParse:true});
+mongoose.connect(uri)
+
+app.use("/api", require("./routes/api"))
+/*
+app.get("/articles", function(req,res) {
+  res.send({type:"GET"})
+  
+})*/
+
+
 
 // Start the API server
 app.listen(PORT, function () {
