@@ -13,7 +13,7 @@ class Home extends Component {
     }
     
     
-    componentDidMount(){
+    componentWillMount(){
         // console.log("Doing something")
         // const newState = {...this.state};
         API.getArticles()
@@ -37,7 +37,12 @@ class Home extends Component {
             </ResultsPanel>
 
             <SavedPanel>
-            {this.state.savedArticle}
+            {this.state.savedArticle.map(article => (
+                <div>
+                    <h3>{article.title}</h3>
+                    <p>{article.url}</p>
+                </div>
+            ))}
             </SavedPanel>
         </div>
         )}

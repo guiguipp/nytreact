@@ -1,5 +1,6 @@
 import React from "react";
 import "./SavedPanel.css"
+import { PromiseProvider } from "mongoose";
 
 const SavedPanel = props => (
 <div className="row">
@@ -15,7 +16,8 @@ const SavedPanel = props => (
                 </h3>
             </div>
 
-            <div className="panel-body" id="well-section">{props.SavedArticles}
+            <div className="panel-body" id="well-section">
+                {props.children}
             </div>
         </div>
     </div>
